@@ -3,23 +3,7 @@ PKG_LIBS = -L../windows/openssl-1.1.1k/lib${R_ARCH}${CRT} -lssl -lcrypto -lcrypt
 
 CXX_STD = CXX11
 
-OBJECTS = cpp-compat.o \
-     s2-accessors.o \
-     s2-bounds.o \
-     s2-cell.o \
-     s2-constructors-formatters.o \
-     s2-predicates.o \
-     s2-transformers.o \
-     init.o \
-     RcppExports.o \
-     s2-geography.o \
-     s2-lnglat.o \
-     s2-matrix.o \
-     s2-point.o \
-     s2-xptr.o \
-     wk-impl.o \
-     wk-c-utils.o \
-     s2-c-api.o \
+S2OBJECTS = \
      s2/base/stringprintf.o \
      s2/base/strtoint.o \
      s2/encoded_s2cell_id_vector.o \
@@ -130,6 +114,8 @@ OBJECTS = cpp-compat.o \
      s2/util/math/exactfloat/exactfloat.o \
      s2/util/math/mathutil.o \
      s2/util/units/length-units.o
+
+OBJECTS += $(S2OBJECTS)
 
 all: clean winlibs
 

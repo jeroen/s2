@@ -1,2 +1,3 @@
 CRT=-ucrt
 include Makevars.win
+OBJECTS += $(S2OBJECTS)
